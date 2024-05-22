@@ -8,7 +8,7 @@ date: 2024-01-24T14:00:00.000Z
 thumbnail:
   src: "https://images.unsplash.com/photo-1715276611636-ca01632a691a?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   visibility:
-    - list
+    # - list
 authorbox: true
 sidebar: true
 pager: true

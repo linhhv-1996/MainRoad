@@ -64,10 +64,10 @@ title = "Mainroad"
     mainSections = ["post"] 
     opengraph = true 
     pager = true 
-    post_meta = ["date", "categories"] # Order of post meta information 
+    post_meta = ["author", "date", "categories",] # Order of post meta information 
     readmore = false # Show "Read more" button in list if true
     toc = true 
-    twitter_cards = false 
+    twitter_cards = true 
 
 [Params.logo]
     subtitle = "Just another site" # Logo subtitle
@@ -84,8 +84,8 @@ title = "Mainroad"
     tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
 
 [Params.widgets.social]
-    cached = false # activate cache if true
-    twitter = "linhhv_here"
+    cached = true # activate cache if true
+    twitter = "linhhv_me"
     instagram = "pi_on_inst"
     telegram = "linhhv"
     email = "linhhv.work@gmail.com"

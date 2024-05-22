@@ -1410,5 +1410,5 @@ table {
 	max-width: fit-content;
 	margin: 0 auto;
 	overflow-x: auto;
-	white-space: nowrap;
+	white-space: normal;
 }
