@@ -1,0 +1,29 @@
+{{ partial "top_menu.html" . }}
+
+{{- $logoTitle := .Site.Params.logo.title | default .Site.Title -}}
+{{- $logoSubtitle := .Site.Params.logo.subtitle | default .Site.Params.subtitle -}}
+{{- $logoImage := .Site.Params.logo.image -}}
+
+{{- if or $logoTitle $logoImage }}
+	{{/* Defined when logo is mixed (image + text) */}}
+	{{- $logoMix := and $logoImage $logoTitle -}}
+
+	<img style="max-height: 150px;width: 100%;" src="https://images.unsplash.com/photo-1715645943531-a57960d41818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+	
+
+	<!-- <div class="logo{{ with $logoMix }} logo--mixed{{ end }}"> -->
+		<!-- <a class="logo__link" href="{{ "" | relLangURL }}"{{ with $logoTitle }} title="{{ . }}"{{ end }} rel="home">
+			{{ with $logoImage -}}
+				<div class="logo__item logo__imagebox">
+					<img class="logo__img" src="{{ . | relURL }}">
+				</div>
+			{{- end -}}
+			{{ with $logoTitle -}}
+				<div class="logo__item logo__text">
+					<div class="logo__title">{{ . }}</div>
+					{{ with $logoSubtitle }}<div class="logo__tagline">{{ . }}</div>{{ end }}
+				</div>
+			{{- end }}
+		</a> -->
+		<!-- </div> -->
+{{- end }}

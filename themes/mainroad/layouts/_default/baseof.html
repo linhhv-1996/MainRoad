@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.Language.Lang }}">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+	{{- if .Site.Params.opengraph }}
+		{{ template "_internal/opengraph.html" . }}
+	{{- end }}
+	{{- if .Site.Params.schema }}
+		{{ template "_internal/schema.html" . }}
+	{{- end }}
+	{{- if .Site.Params.twitter_cards }}
+		{{ template "_internal/twitter_cards.html" . }}
+	{{- end }}
+
+	{{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" }}
+	{{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" {{ printf `href="%s"` $googleFontsLink | safeHTMLAttr }}>
+	{{- end }}
+
+	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
+	<link rel="stylesheet" href="{{ $style.RelPermalink }}">
+	{{ range .Site.Params.customCSS -}}
+	<link rel="stylesheet" href="{{ . | relURL }}">
+	{{- end }}
+
+	{{- with .OutputFormats.Get "rss" }}
+	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{- end }}
+
+	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
+	{{- if not .Site.IsServer }}
+		{{ template "_internal/google_analytics.html" . }}
+	{{- end }}
+</head>
+<body class="body">
+	<div class="container container--outer">
+		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+
+		<!-- <div class=" wrapper flex disclosure">
+			BizBufen relies on readers. We may earn commissions when you purchase through our links. Check Affiliate Disclosure
+		</div> -->
+
+		<div class="wrapper flex">
+			<div class="primary">
+			{{ block "main" . }}
+				{{ with .Content }}
+				<div class="content main__content clearfix">
+					{{ . }}
+				</div>
+				{{ end }}
+			{{ end }}
+			</div>
+			{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
+		</div>
+
+		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
+
+		<a href="#" id="back-top">
+			<svg xmlns="http://www.w3.org/2000/svg" class="back-to-top-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+			</svg>
+		</a>
+
+	</div>
+<script async defer src="{{ "js/menu.js" | relURL }}"></script>
+{{ range .Site.Params.customJS -}}
+<script src="{{ . | relURL }}"></script>
+{{- end }}
+{{- partial "mathjax.html" . -}}
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script>
+	let btn = $('#back-top');
+	
+	$(window).scroll(function() {
+		if ($(window).scrollTop() > 500) {
+				btn.addClass('show');
+		} else {
+				btn.removeClass('show');
+		}
+	});
+
+	btn.on('click', function(e) {
+		e.preventDefault();
+		$('html, body').animate({scrollTop:0}, '300');
+	});
+
+	document.addEventListener("DOMContentLoaded", makeLinksSmooth);
+
+	function makeLinksSmooth() { 
+		const navLinks = document.querySelectorAll("#TableOfContents a"); 
+
+		navLinks.forEach((link) => {
+			link.addEventListener("click", smoothScroll);
+		});
+	}
+
+	function smoothScroll(e) {
+		e.preventDefault();
+		const targetId = this.getAttribute("href");
+		const targetElement = document.querySelector(targetId);
+		if (targetElement) { 
+			targetElement.scrollIntoView({ behavior: "smooth", });
+		}
+	}
+
+	let coll = document.getElementsByClassName("toc__title");
+	if (coll.length) {
+		coll[0].addEventListener("click", function() {
+			this.classList.toggle("toc__active");
+			var content = this.nextElementSibling;
+			if (content.style.maxHeight){
+				content.style.maxHeight = null;
+			} else {
+				content.style.maxHeight = content.scrollHeight + "px";
+			} 
+		});
+	}
+	
+
+</script>
+</body>
+</html>
