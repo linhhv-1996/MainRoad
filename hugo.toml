@@ -47,6 +47,10 @@ title = "Mainroad"
     name = 'Disclaimer'
     url = '/disclaimer'
     weight = 50
+[[Menu.footer]]
+    name = 'Sitemap'
+    url = '/sitemap.xml'
+    weight = 60
 
 
 [Author]

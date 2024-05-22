@@ -27,6 +27,17 @@ and more.
 This section will mainly cover customization settings that are unique to this theme. If something is not covered here,
 there's a good chance it is covered somewhere in [Hugo docs](https://gohugo.io/documentation/).
 
+<!-- Buy -->
+
+
+| **Award** | **PurchaseURL** |
+|-|-|
+| Combine by Tutorials | https://www.amazon.com/Combine-Asynchronous-Programming-Swift-First/dp/1942878842 |
+| Modern Concurrency in Swift | https://www.amazon.com/Modern-Concurrency-Swift-First-Introducing/dp/1950325539 |
+| A Philosophy of Software Design | https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X |
+
+&nbsp;
+
 ### Logo
 
 **Mainroad** allows you to set a custom logo in the site header. You may use text, or image, or both. Use the following
