@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ .Site.Language.Lang }}">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{ block "title" . }}{{ if not .IsHome }}{{ .Title }} - {{ end }}{{ .Site.Title }}{{ end }}</title>
-	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
-	<meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
+	<meta name="description"
+		content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
 	{{- if .Site.Params.opengraph }}
-		{{ template "_internal/opengraph.html" . }}
+	{{ template "_internal/opengraph.html" . }}
 	{{- end }}
 	{{- if .Site.Params.schema }}
-		{{ template "_internal/schema.html" . }}
+	{{ template "_internal/schema.html" . }}
 	{{- end }}
 	{{- if .Site.Params.twitter_cards }}
-		{{ template "_internal/twitter_cards.html" . }}
+	{{ template "_internal/twitter_cards.html" . }}
 	{{- end }}
 
-	{{- $googleFontsLink := .Site.Params.googleFontsLink | default "https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" }}
+	{{- $googleFontsLink := .Site.Params.googleFontsLink | default
+	"https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700" }}
 	{{- if hasPrefix $googleFontsLink "https://fonts.googleapis.com/" }}
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link rel="dns-prefetch" href="//fonts.googleapis.com">
 	<link rel="dns-prefetch" href="//fonts.gstatic.com">
-	<link rel="stylesheet" {{ printf `href="%s"` $googleFontsLink | safeHTMLAttr }}>
+	<link rel="stylesheet" {{ printf `href="%s" ` $googleFontsLink | safeHTMLAttr }}>
 	{{- end }}
 
 	{{ $style := resources.Get "css/style.css" | resources.ExecuteAsTemplate "css/style.css" . -}}
@@ -31,105 +34,102 @@
 	{{- end }}
 
 	{{- with .OutputFormats.Get "rss" }}
-	{{ printf `<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+	{{ printf `
+	<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
 
-	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
+	<link rel="shortcut icon" href="{{ " favicon.ico" | relURL }}">
 	{{- if not .Site.IsServer }}
-		{{ template "_internal/google_analytics.html" . }}
+	{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
 </head>
+
 <body class="body">
 	<div class="container container--outer">
 		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 
-		<!-- <div class=" wrapper flex disclosure">
-			BizBufen relies on readers. We may earn commissions when you purchase through our links. Check Affiliate Disclosure
-		</div> -->
-
 		<div class="wrapper flex">
 			<div class="primary">
-			{{ block "main" . }}
+				{{ block "main" . }}
 				{{ with .Content }}
 				<div class="content main__content clearfix">
 					{{ . }}
 				</div>
 				{{ end }}
-			{{ end }}
+				{{ end }}
 			</div>
 			{{ block "sidebar" . }}{{ partial "sidebar.html" . }}{{ end }}
 		</div>
 
-
-		
-
 		{{ block "footer" . }}{{ partial "footer.html" . }}{{ end }}
 
-		
-
 		<a href="#" id="back-top">
-			<svg xmlns="http://www.w3.org/2000/svg" class="back-to-top-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 11l5-5m0 0l5 5m-5-5v12" />
+			<svg enable-background="new 0 0 32 32" id="Layer_1" version="1.1" viewBox="0 0 32 32" xml:space="preserve"
+				xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<path
+					d="M18.221,7.206l9.585,9.585c0.879,0.879,0.879,2.317,0,3.195l-0.8,0.801c-0.877,0.878-2.316,0.878-3.194,0  l-7.315-7.315l-7.315,7.315c-0.878,0.878-2.317,0.878-3.194,0l-0.8-0.801c-0.879-0.878-0.879-2.316,0-3.195l9.587-9.585  c0.471-0.472,1.103-0.682,1.723-0.647C17.115,6.524,17.748,6.734,18.221,7.206z"
+					fill="#ffffff"></path>
 			</svg>
 		</a>
 
 	</div>
-<script async defer src="{{ "js/menu.js" | relURL }}"></script>
-{{ range .Site.Params.customJS -}}
-<script src="{{ . | relURL }}"></script>
-{{- end }}
-{{- partial "mathjax.html" . -}}
+	<script async defer src="{{ "js/menu.js" | relURL }}"></script>
+	{{ range .Site.Params.customJS -}}
+	<script src="{{ . | relURL }}"></script>
+	{{- end }}
+	{{- partial "mathjax.html" . -}}
 
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-<script>
-	let btn = $('#back-top');
-	
-	$(window).scroll(function() {
-		if ($(window).scrollTop() > 500) {
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script>
+		let btn = $('#back-top');
+
+		$(window).scroll(function () {
+			if ($(window).scrollTop() > 500) {
 				btn.addClass('show');
-		} else {
-				btn.removeClass('show');
-		}
-	});
-
-	btn.on('click', function(e) {
-		e.preventDefault();
-		$('html, body').animate({scrollTop:0}, '300');
-	});
-
-	document.addEventListener("DOMContentLoaded", makeLinksSmooth);
-
-	function makeLinksSmooth() { 
-		const navLinks = document.querySelectorAll("#TableOfContents a"); 
-
-		navLinks.forEach((link) => {
-			link.addEventListener("click", smoothScroll);
-		});
-	}
-
-	function smoothScroll(e) {
-		e.preventDefault();
-		const targetId = this.getAttribute("href");
-		const targetElement = document.querySelector(targetId);
-		if (targetElement) { 
-			targetElement.scrollIntoView({ behavior: "smooth", });
-		}
-	}
-
-	let coll = document.getElementsByClassName("toc__title");
-	if (coll.length) {
-		coll[0].addEventListener("click", function() {
-			this.classList.toggle("toc__active");
-			var content = this.nextElementSibling;
-			if (content.style.maxHeight){
-				content.style.maxHeight = null;
 			} else {
-				content.style.maxHeight = content.scrollHeight + "px";
-			} 
+				btn.removeClass('show');
+			}
 		});
-	}
-	
 
-</script>
+		btn.on('click', function (e) {
+			e.preventDefault();
+			$('html, body').animate({ scrollTop: 0 }, '300');
+		});
+
+		document.addEventListener("DOMContentLoaded", makeLinksSmooth);
+
+		function makeLinksSmooth() {
+			const navLinks = document.querySelectorAll("#TableOfContents a");
+
+			navLinks.forEach((link) => {
+				link.addEventListener("click", smoothScroll);
+			});
+		}
+
+		function smoothScroll(e) {
+			e.preventDefault();
+			const targetId = this.getAttribute("href");
+			const targetElement = document.querySelector(targetId);
+			if (targetElement) {
+				targetElement.scrollIntoView({ behavior: "smooth", });
+			}
+		}
+
+		let coll = document.getElementsByClassName("toc__title");
+		if (coll.length) {
+			coll[0].addEventListener("click", function () {
+				this.classList.toggle("toc__active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight) {
+					content.style.maxHeight = null;
+				} else {
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			});
+		}
+
+
+	</script>
 </body>
 </html>
