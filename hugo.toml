@@ -1,4 +1,4 @@
-baseurl = "localhost:1313/" 
+baseurl = "https://mainroad-b1na.onrender.com/" 
 disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
