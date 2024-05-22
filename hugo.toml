@@ -1,0 +1,90 @@
+baseurl = "localhost:1313/" 
+disqusShortname = "" # Enable comments by entering your Disqus shortname
+googleAnalytics = "" # Enable Google Analytics by entering your tracking id
+languageCode = "en-us" 
+paginate = "5" # Number of posts per page
+theme = "mainroad" 
+title = "Mainroad" 
+
+[Menu]
+[[Menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+[[Menu.main]]
+    name = 'Designer Laptop'
+    url = '/categories/Fearless Francis'
+    weight = 20
+[[Menu.main]]
+    name = 'Teacher Laptop'
+    url = '/categories/Journeys Past'
+    weight = 30
+[[Menu.main]]
+    name = 'CAD Laptop'
+    url = '/TitBits'
+    weight = 40
+[[Menu.main]]
+    name = 'IT Laptop'
+    url = '/WebLinks'
+    weight = 50
+[[Menu.footer]]
+    name = 'About'
+    url = '/about'
+    weight = 10
+[[Menu.footer]]
+    name = 'Contact'
+    url = '/contact'
+    weight = 20
+[[Menu.footer]]
+    name = 'Privacy'
+    url = '/privacy'
+    weight = 30
+[[Menu.footer]]
+    name = 'Terms'
+    url = '/terms'
+    weight = 40
+[[Menu.footer]]
+    name = 'Disclaimer'
+    url = '/disclaimer'
+    weight = 50
+
+
+[Author]
+    avatar = "img/avatar.png"
+    bio = "Reviewer's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+    name = "Reviewer"
+
+[Params]
+    authorbox = true 
+    description = "Reviewer's Personal blog about everything" # Description of your site
+    mainSections = ["post"] 
+    opengraph = true 
+    pager = true 
+    post_meta = ["date", "categories"] # Order of post meta information 
+    readmore = false # Show "Read more" button in list if true
+    toc = true 
+    twitter_cards = false 
+
+[Params.logo]
+    subtitle = "Just another site" # Logo subtitle
+
+[Params.sidebar]
+    home = "right" # Configure layout for home page
+    list = "right" # Configure layout for list pages
+    single = "right" # Configure layout for single pages
+    # Enable widgets in given order
+    widgets = ["search", "recent", "categories", "taglist", "social"]
+
+[Params.widgets]
+    recent_num = 5 # Set the number of articles in the "Recent articles" widget
+    tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
+
+[Params.widgets.social]
+    cached = false # activate cache if true
+    twitter = "linhhv_here"
+    instagram = "pi_on_inst"
+    telegram = "linhhv"
+    email = "linhhv.work@gmail.com"
+
+[Params.thumbnail]
+    visibility = ["list", "post"] # Control thumbnail visibility
