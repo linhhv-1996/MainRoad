@@ -4,7 +4,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
 paginate = "5" # Number of posts per page
 theme = "mainroad" 
-title = "Mainroad" 
+title = "Byte Buzzing" 
 
 [Menu]
 [[Menu.main]]
@@ -70,7 +70,7 @@ title = "Mainroad"
     twitter_cards = true 
 
 [Params.logo]
-    subtitle = "Just another site" # Logo subtitle
+    subtitle = "Get the buzz on the latest products and tech trends!" # Logo subtitle
 
 [Params.sidebar]
     home = "right" # Configure layout for home page
