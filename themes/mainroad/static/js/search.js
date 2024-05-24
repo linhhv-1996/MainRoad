@@ -48,7 +48,6 @@ function populateResults(result) {
         let contents = value.item.contents;
         let snippet = "";
         let snippetHighlights = [];
-        let tags = [];
         if (fuseOptions.tokenize) {
             snippetHighlights.push(searchQuery);
         } else {
