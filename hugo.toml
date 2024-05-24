@@ -61,7 +61,7 @@ title = "Byte Buzzing"
 [Params]
     authorbox = true 
     description = "Reviewer's Personal blog about everything" # Description of your site
-    mainSections = ["post"] 
+    mainSections = ["post", "docs"] 
     opengraph = true 
     pager = true 
     post_meta = ["author", "date", "categories",] # Order of post meta information 
@@ -92,3 +92,6 @@ title = "Byte Buzzing"
 
 [Params.thumbnail]
     visibility = ["list", "post"] # Control thumbnail visibility
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]

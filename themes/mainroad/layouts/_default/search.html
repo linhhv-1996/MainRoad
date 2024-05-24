@@ -1,0 +1,27 @@
+{{ define "main" }}
+<main class="main list" role="main">
+  {{- with .Title }}
+	<header class="main__header">
+    <h1 class="main__title">{{ . }}  <span class="list__lead post__lead" id="search-string"></span></h1>
+   
+	</header>
+  {{- end }}
+  <div id="search-results">
+  </div>
+</main>
+<!-- this template is sucked in by search.js and appended to the search-results div above. So editing here will adjust style -->
+<script id="search-result-template" type="text/x-js-template">
+    <article class="list__item post" id="summary-${key}">
+      <header class="list__header">
+        <h3 class="list__title post__title ">
+          <a href="${link}" rel="bookmark">
+            ${title} 
+          </a>         
+        </h3>
+      </header>
+      <div class="content list__excerpt post__content clearfix">
+        ${snippet}
+      </div>
+    </article>
+</script>
+{{ end }}
