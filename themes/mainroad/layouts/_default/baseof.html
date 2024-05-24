@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="no-js" lang="{{ .Site.Language.Lang }}">
-
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,15 +37,21 @@
 	<link rel="%s" type="%s" href="%s" title="%s">` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
 	{{- end }}
 
-	<link rel="shortcut icon" href="{{ " favicon.ico" | relURL }}">
+	<link rel="shortcut icon" href="{{ "favicon.ico" | relURL }}">
 	{{- if not .Site.IsServer }}
 	{{ template "_internal/google_analytics.html" . }}
 	{{- end }}
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body class="body">
 	<div class="container container--outer">
 		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
+
+		{{ if .IsHome }}
+			{{ partial "home_feature_post_slider.html" . }}
+		{{ end }}
 
 		<div class="wrapper flex">
 			<div class="primary">
@@ -71,18 +76,16 @@
 					fill="#ffffff"></path>
 			</svg>
 		</a>
-
+	
 	</div>
+
 	<script async defer src="{{ "js/menu.js" | relURL }}"></script>
 
 	{{ range .Site.Params.customJS -}}
 	<script src="{{ . | relURL }}"></script>
-
 	{{- end }}
-	{{- partial "mathjax.html" . -}}
 
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	{{- partial "mathjax.html" . -}}
 
 	<script src="{{ "js/jquery-3.3.1.min.js" | relURL }}"></script>
 	<script src="{{ "js/fuse.min.js" | relURL }}"></script>
@@ -136,8 +139,39 @@
 				}
 			});
 		}
+	
+	</script>
 
 
+	<!-- Initialize Swiper -->
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<script>
+		let mobile = window.matchMedia("(min-width: 0px) and (max-width: 768px)");
+		const progressCircle = document.querySelector(".autoplay-progress svg");
+		const progressContent = document.querySelector(".autoplay-progress span");
+		let slidesPerView = mobile.matches ? 1 : 3;
+		var swiper = new Swiper(".mySwiper", {
+			slidesPerView: slidesPerView,
+			spaceBetween: 1,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true
+			},
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev"
+			},
+			// on: {
+			// 	autoplayTimeLeft(s, time, progress) {
+			// 		progressCircle.style.setProperty("--progress", 1 - progress);
+			// 		progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+			// 	}
+			// }
+		});
 	</script>
 </body>
 </html>

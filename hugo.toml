@@ -82,6 +82,7 @@ title = "Byte Buzzing"
 [Params.widgets]
     recent_num = 5 # Set the number of articles in the "Recent articles" widget
     tags_counter = true # Enable counter for each tag in "Tags" widget (disabled by default)
+    categories_counter = true
 
 [Params.widgets.social]
     cached = true # activate cache if true
