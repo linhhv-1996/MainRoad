@@ -67,7 +67,8 @@ title = "Byte Buzzing"
     post_meta = ["author", "date", "categories",] # Order of post meta information 
     readmore = false # Show "Read more" button in list if true
     toc = true 
-    twitter_cards = true 
+    twitter_cards = true
+    featuredSections = ["featured"]
 
 [Params.logo]
     subtitle = "Get the buzz on the latest products and tech trends!" # Logo subtitle

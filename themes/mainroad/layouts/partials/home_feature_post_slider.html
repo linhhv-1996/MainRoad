@@ -1,40 +1,78 @@
+{{- $featured := where .Site.RegularPages "Type" "in" .Site.Params.featuredSections }}
+{{- $featured_num := (.Site.Params.widgets.recent_num | default 6) }}
+
+{{- if $featured }}
+
 <div class="swiper mySwiper">
     <div class="swiper-wrapper">
+
+        {{- range first $featured_num $featured }}
+			
         <div class="swiper-slide">
-            <a href="/post/top-10-gaming-laptop-for-student-2024/">
-                <p class="slider_title">Top 10 Laptop For Gamer 2024</p>
+            <a href="{{ .RelPermalink }}">
                 <img
                     src="https://images.unsplash.com/photo-1704688618021-557e23d44850?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
+                    
             </a>
         </div>
         <div class="swiper-slide">
             <a href="/post/top-10-gaming-laptop-for-student-2024/">
-                <p class="slider_title">Top 10 Laptop For Designer 2024</p>
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
                 <img
                     src="https://images.unsplash.com/photo-1716436329478-e4261139e1ca?q=80&w=2128&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="/post/top-10-gaming-laptop-for-student-2024/">
-                <p class="slider_title">Top 5 Laptop For Developer 2024</p>
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
                 <img
                     src="https://images.unsplash.com/photo-1716414458161-91b34446b749?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="/post/top-10-gaming-laptop-for-student-2024/">
-                <p class="slider_title">Top 10 Laptop For Gamer 2024</p>
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
                 <img
-                    src="https://images.unsplash.com/photo-1715942163404-b44e0808536b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    src="https://images.unsplash.com/photo-1716043306223-530596612983?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             </a>
         </div>
         <div class="swiper-slide">
             <a href="/post/top-10-gaming-laptop-for-student-2024/">
-                <p class="slider_title">Top 10 Laptop For Gamer 2024</p>
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
                 <img
-                    src="https://images.unsplash.com/photo-1715942163355-592c57361b9b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+                    src="https://images.unsplash.com/photo-1714969894946-8d5e55419ed3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
             </a>
         </div>
+        <div class="swiper-slide">
+            <a href="/post/top-10-gaming-laptop-for-student-2024/">
+                <div class="slider_text">
+                    <p class="slider_title">{{ .Title }}</p>
+                    <p class="slider_desc">{{ .Description }}</p>
+                </div>
+                <img
+                    src="https://images.unsplash.com/photo-1715788338483-d991b12a988f?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            </a>
+        </div>
+
+        {{- end }}
+        
     </div>
     <div class="swiper-button-next"></div>
     <div class="swiper-button-prev"></div>
@@ -46,3 +84,5 @@
         <span></span>
     </div>
 </div>
+
+{{- end }}

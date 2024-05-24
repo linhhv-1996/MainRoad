@@ -9,6 +9,7 @@
 	{{- range $paginator.Pages }}
 		{{- .Render "summary" }}
 	{{- end }}
+
 	{{- if and (eq $paginator.TotalNumberOfElements 0) (not $.Content) }}
 		<div class="warning">
 			{{ partial "svg/files.svg" (dict "class" "warning__icon") }}

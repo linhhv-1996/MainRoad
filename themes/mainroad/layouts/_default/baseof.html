@@ -47,12 +47,14 @@
 
 <body class="body">
 	<div class="container container--outer">
+		{{- $allPosts := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+
 		{{ block "header" . }}{{ partial "header.html" . }}{{ end }}
 
 		{{ if .IsHome }}
 			{{ partial "home_feature_post_slider.html" . }}
 			<div class="my_wrapper">
-				<h2 class="latest_post">LATEST POSTS</h2>
+				<h2 class="latest_post">All Posts ({{ len $allPosts }})</h2>
 			</div>
 		{{ end }}
 
@@ -157,7 +159,7 @@
 			slidesPerView: slidesPerView,
 			spaceBetween: 1,
 			autoplay: {
-				delay: 2500,
+				delay: 3000,
 				disableOnInteraction: false
 			},
 			pagination: {
@@ -168,12 +170,6 @@
 				nextEl: ".swiper-button-next",
 				prevEl: ".swiper-button-prev"
 			},
-			// on: {
-			// 	autoplayTimeLeft(s, time, progress) {
-			// 		progressCircle.style.setProperty("--progress", 1 - progress);
-			// 		progressContent.textContent = `${Math.ceil(time / 1000)}s`;
-			// 	}
-			// }
 		});
 	</script>
 </body>

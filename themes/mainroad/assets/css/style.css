@@ -555,7 +555,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 @media screen and (min-width: 767px) {
 	.menu {
 		/* border-bottom: 3px solid {{ $highlightColor }}; */
-		margin-bottom: 2px;
+		margin-bottom: 1px;
 	}
 
 	.menu__btn {
@@ -900,16 +900,15 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	max-width: 235px;
 }
 
-.list__item:nth-child(1) .list__thumbnail {
+/* .list__item:nth-child(1) .list__thumbnail {
 	float: none;
 	margin: 0 0px 10px 0;
-}
-
-.list__item:nth-child(1) .list__thumbnail img {
+} */
+/* .list__item:nth-child(1) .list__thumbnail img {
 	width: 100%;
 	max-width: 100%;
 	max-height: 400px;
-}
+} */
 
 .list__footer-readmore {
 	float: right;
@@ -1357,7 +1356,7 @@ textarea {
 
 #back-top {
 	display: inline-block;
-	background-color: #e64946;
+	background-color: {{ $highlightColor }};
 	width: 40px;
 	height: 40px;
 	text-align: center;
@@ -1481,22 +1480,31 @@ table {
 .swiper-button-prev::after,
 .swiper-button-next::after {
 	font-size: 25px !important;
-	color: #cf2e2e;
+	color: #fff;
 }
   
 .slider_title {
-	position: absolute;
-	color: white;
 	font-weight: bold;
 	padding: 20px 30px;
-	width: 96%;
-	background: #3d3d3d;
-	left: 50%;
-	transform: translate(-50%, 0);
-	bottom: 50px;
+	margin-bottom: 0;
 }
 
+.slider_desc {
+	font-size: 15px;
+}
 
+.slider_text {
+	position: absolute;
+    bottom: 0px;
+    background: #0d0d0d;
+    opacity: 0.7;
+	color: white;
+	text-align: center;
+}
+
+.swiper-pagination {
+	bottom: 0 !important;
+}
 
 .my_wrapper {
 	background: #fff !important;
