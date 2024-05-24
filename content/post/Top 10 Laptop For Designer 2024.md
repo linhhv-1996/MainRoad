@@ -55,7 +55,7 @@ Disable it this way:
   subtitle = false
 ```
 
-### Highlight color
+### Highlight color Mainroad uses `#e22d30`
 
 Mainroad uses `#e22d30` as a default highlight color, but you may choose and set any other color.
 
