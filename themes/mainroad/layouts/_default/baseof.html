@@ -7,6 +7,7 @@
 	<script>(function (d, e) { d[e] = d[e].replace("no-js", "js"); })(document.documentElement, "className");</script>
 	<meta name="description"
 		content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Params.Description }}{{ end }}">
+
 	{{- if .Site.Params.opengraph }}
 	{{ template "_internal/opengraph.html" . }}
 	{{- end }}
@@ -81,7 +82,6 @@
 					fill="#ffffff"></path>
 			</svg>
 		</a>
-	
 	</div>
 
 	<script async defer src="{{ "js/menu.js" | relURL }}"></script>
@@ -91,7 +91,6 @@
 	{{- end }}
 
 	{{- partial "mathjax.html" . -}}
-
 	<script src="{{ "js/jquery-3.3.1.min.js" | relURL }}"></script>
 	<script src="{{ "js/fuse.min.js" | relURL }}"></script>
 	<script src="{{ "js/jquery.mark.min.js" | relURL }}"></script>
@@ -144,9 +143,8 @@
 				}
 			});
 		}
-	
-	</script>
 
+	</script>
 
 	<!-- Initialize Swiper -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -155,8 +153,13 @@
 		const progressCircle = document.querySelector(".autoplay-progress svg");
 		const progressContent = document.querySelector(".autoplay-progress span");
 		let slidesPerView = mobile.matches ? 1 : 3;
-		var swiper = new Swiper(".mySwiper", {
-			slidesPerView: slidesPerView,
+		let swiper = new Swiper(".mySwiper", {
+			slidesPerView: 1,
+			breakpoints: {
+				769: {
+					slidesPerView: 3,
+				}
+			},
 			spaceBetween: 1,
 			loop: true,
 			autoplay: {
@@ -172,6 +175,7 @@
 				prevEl: ".swiper-button-prev"
 			},
 		});
+
 	</script>
 </body>
 </html>
