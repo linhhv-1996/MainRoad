@@ -8,7 +8,7 @@ date: 2024-01-24T14:00:00.000Z
 thumbnail:
   src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   visibility:
-    # - list
+    - list
 authorbox: true
 sidebar: true
 pager: true
@@ -32,12 +32,13 @@ there's a good chance it is covered somewhere in [Hugo docs](https://gohugo.io/d
 
 <!-- Buy -->
 
+<button type="submit" style="padding:5px; background:red;">BUY</button>
 
-| **Award** | **PurchaseURL** |
-|-|-|
-| Combine by Tutorials | https://www.amazon.com/Combine-Asynchronous-Programming-Swift-First/dp/1942878842 |
-| Modern Concurrency in Swift | https://www.amazon.com/Modern-Concurrency-Swift-First-Introducing/dp/1950325539 |
-| A Philosophy of Software Design | https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X |
+| **Award** | **PurchaseURL** | **Buy** |
+|-|-|-|
+| Combine by Tutorials | https://www.amazon.com/Combine-Asynchronous-Programming-Swift-First/dp/1942878842 | <a href="/kinchana">aaa</a> | 
+| Modern Concurrency in Swift | https://www.amazon.com/Modern-Concurrency-Swift-First-Introducing/dp/1950325539 | <a href="/kinchana">aaa</a> |
+| A Philosophy of Software Design | https://www.amazon.com/Philosophy-Software-Design-2nd/dp/173210221X | <a href="/kinchana">aaa</a> |
 
 &nbsp;
 

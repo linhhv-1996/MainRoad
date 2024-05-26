@@ -2,7 +2,7 @@ baseurl = "https://mainroad-b1na.onrender.com/"
 disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
-paginate = "5" # Number of posts per page
+paginate = "8" # Number of posts per page
 theme = "mainroad" 
 title = "Byte Buzzing" 
 
@@ -96,4 +96,7 @@ title = "Byte Buzzing"
     visibility = ["list", "post"] # Control thumbnail visibility
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+    home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+    unsafe= true
