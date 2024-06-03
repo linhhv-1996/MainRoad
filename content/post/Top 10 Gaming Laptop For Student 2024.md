@@ -42,9 +42,9 @@ there's a good chance it is covered somewhere in [Hugo docs](https://gohugo.io/d
 
 &nbsp;
 
-## Logo
+## 1. Logo
 
-### Logo 1
+### 1.1. Logo 1
 
 **Mainroad** allows you to set a custom logo in the site header. You may use text, or image, or both. Use the following
 options in your site config:
@@ -55,6 +55,8 @@ options in your site config:
   title = "Mainroad"
   subtitle = "Just another site"
 ```
+
+### 1.2. Logo 2
 
 **Note:** logo image will display at a maximum width of 128 pixels and a maximum height of 128 pixels
 when you use text and image simultaneously. When the only logo image is active, it will display at a maximum height of
@@ -71,6 +73,8 @@ Disable it this way:
   title = false
   subtitle = false
 ```
+
+## Content
 
 ### Highlight color
 

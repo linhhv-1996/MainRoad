@@ -777,7 +777,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .toc {
 	width: fit-content;
 	margin-bottom: 20px;
-	font-weight: 700;
+	font-weight: 600;
 	color: #7a8288;
 	background: #fff;
 	border-color: #ebebeb;
