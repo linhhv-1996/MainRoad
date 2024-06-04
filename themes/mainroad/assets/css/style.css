@@ -391,6 +391,7 @@ select {
 
 .logo {
 	padding: 25px;
+	text-align: center;
 }
 
 .logo__link {
@@ -440,7 +441,7 @@ select {
 	font-weight: 700;
 	line-height: 1;
 	color: {{ $highlightColor }};
-	border-top: 1px solid #ebebeb;
+	/* border-top: 1px solid #ebebeb; */
 }
 
 .divider {
@@ -1107,7 +1108,7 @@ textarea {
 
 /* Search widget */
 .widget-search__form {
-	padding: 16px 16px;
+	padding: 12px;
 	background: #f5f5f5;
 }
 
@@ -1394,7 +1395,7 @@ textarea {
 .toc__menu {
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.2s ease-out;
+	transition: all 0.2s ease-out;
 }
 
 .toc__title:after {
@@ -1411,7 +1412,7 @@ textarea {
 
 .disclaimer {
 	color: white;
-    font-style: italic;
+    /* font-style: italic; */
 }
 
 table {

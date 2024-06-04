@@ -3,8 +3,16 @@ disqusShortname = "" # Enable comments by entering your Disqus shortname
 googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
 paginate = "8" # Number of posts per page
-theme = "mainroad" 
-title = "Byte Buzzing" 
+theme = "mainroad"
+title = "HarryLab"
+
+[Params.banner]
+    show = false
+
+[Params.logo]
+    title = "HarryLab"
+    subtitle = "Latest products and tech trends!" # Logo subtitle
+    # image = "https://images.unsplash.com/photo-1715645943531-a57960d41818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 [Menu]
 [[Menu.main]]
@@ -52,7 +60,6 @@ title = "Byte Buzzing"
     url = '/sitemap.xml'
     weight = 60
 
-
 [Author]
     avatar = "img/avatar.png"
     bio = "Reviewer's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
@@ -69,9 +76,6 @@ title = "Byte Buzzing"
     toc = true 
     twitter_cards = true
     featuredSections = ["featured"]
-
-[Params.logo]
-    subtitle = "Get the buzz on the latest products and tech trends!" # Logo subtitle
 
 [Params.sidebar]
     home = "right" # Configure layout for home page
@@ -100,3 +104,4 @@ title = "Byte Buzzing"
 
 [markup.goldmark.renderer]
     unsafe= true
+

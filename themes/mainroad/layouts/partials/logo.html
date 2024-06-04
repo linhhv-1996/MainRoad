@@ -1,4 +1,6 @@
+{{- if .Site.Params.banner.show -}}
 {{ partial "top_menu.html" . }}
+{{- end -}}
 
 {{- $logoTitle := .Site.Params.logo.title | default .Site.Title -}}
 {{- $logoSubtitle := .Site.Params.logo.subtitle | default .Site.Params.subtitle -}}
