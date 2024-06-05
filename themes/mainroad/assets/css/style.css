@@ -1564,3 +1564,8 @@ table {
 .formkit-submit span {
 	padding: 7px 24px !important;
 }
+
+.formkit-guarantee {
+	display: none !important;
+}
+
