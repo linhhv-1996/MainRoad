@@ -4,13 +4,13 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
 paginate = "8" # Number of posts per page
 theme = "mainroad"
-title = "HarryLab"
+title = "HarryLabs"
 
 [Params.banner]
     show = false
 
 [Params.logo]
-    title = "HarryLab"
+    title = "HarryLabs"
     subtitle = "Latest products and tech trends!" # Logo subtitle
     # image = "https://images.unsplash.com/photo-1715645943531-a57960d41818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
@@ -62,8 +62,8 @@ title = "HarryLab"
 
 [Author]
     avatar = "img/avatar.png"
-    bio = "Reviewer's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
-    name = "Reviewer"
+    bio = "HarryLabs's true identity is unknown. Maybe he is a successful blogger or writer. Nobody knows it."
+    name = "HarryLabs"
 
 [Params]
     authorbox = true 
@@ -82,7 +82,7 @@ title = "HarryLab"
     list = "right" # Configure layout for list pages
     single = "right" # Configure layout for single pages
     # Enable widgets in given order
-    widgets = ["search", "recent", "categories", "taglist", "social"]
+    widgets = ["search", "recent", "categories", "taglist", "social", "subscribe"]
 
 [Params.widgets]
     recent_num = 5 # Set the number of articles in the "Recent articles" widget
@@ -95,6 +95,7 @@ title = "HarryLab"
     instagram = "pi_on_inst"
     telegram = "linhhv"
     email = "linhhv.work@gmail.com"
+    subscribe = true
 
 [Params.thumbnail]
     visibility = ["list", "post"] # Control thumbnail visibility

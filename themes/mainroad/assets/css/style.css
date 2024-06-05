@@ -1110,10 +1110,19 @@ textarea {
 .widget-search__form {
 	padding: 12px;
 	background: #f5f5f5;
+	position: relative;
 }
 
 .widget-search__submit[type=submit] {
-	display: none;
+	position: absolute;
+    right: 13px;
+    bottom: 13px;
+    border: transparent;
+    background: #e22d30;
+    cursor: pointer;
+    height: 33px;
+    width: 33px;
+    color: white;
 }
 
 .widget-search__field {
@@ -1126,6 +1135,7 @@ textarea {
 	outline-offset: -2px;
 	transition: none;
 	-webkit-appearance: none;
+	padding-right: 36px;
 }
 
 .widget-search__field:active,
@@ -1358,8 +1368,8 @@ textarea {
 #back-top {
 	display: inline-block;
 	background-color: {{ $highlightColor }};
-	width: 40px;
-	height: 40px;
+	width: 36px;
+	height: 36px;
 	text-align: center;
 	border-radius: 0px;
 	position: fixed;
@@ -1515,5 +1525,42 @@ table {
 	padding-top: 25px;
 	padding-left: 25px;
 	margin: 0;
-	/* text-align: center; */
+}
+
+.formkit-form[data-uid="be0daf1330"] .formkit-column, .formkit-form[data-uid="be0daf1330"][min-width~="600"] [data-style="minimal"] {
+	padding: 0 !important;
+}
+
+.formkit-header, .formkit-subheader, .formkit-powered-by-convertkit-container {
+	display: none !important;
+}
+
+.formkit-form {
+	border: none !important;
+}
+
+.formkit-form[data-uid="be0daf1330"][min-width~="600"] .formkit-fields[data-stacked="false"] {
+	margin: 0 !important;
+	display: block !important;
+}
+
+.formkit-field, .formkit-submit {
+	margin: 0 !important;
+	border-radius: 0 !important;
+	margin-bottom: 10px !important;
+	width: 100%;
+}
+
+.formkit-field input {
+	border-radius: 0 !important;
+	height: 35px !important;
+}
+
+.formkit-submit {
+	background: black !important;
+	font-weight: 700 !important;
+}
+
+.formkit-submit span {
+	padding: 7px 24px !important;
 }

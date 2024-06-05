@@ -22,7 +22,7 @@ let searchQuery = param("s");
 if (searchQuery) {
     $("#search-query").val(searchQuery);
     $(".widget-search__field").val(searchQuery);
-    let txt = `for "<i>${searchQuery}</i>"`
+    let txt = `for "<span>${searchQuery}</span>"`
     $(".main__title").append(txt);
     executeSearch(searchQuery);
 } else {
