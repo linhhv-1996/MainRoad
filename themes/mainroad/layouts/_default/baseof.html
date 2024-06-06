@@ -68,11 +68,27 @@
 
 			{{ if eq $currentURL $postURL $featuredURL }}
 			{{ else }}
-			<div class="wrapper pt__30">
+			
+			<!-- <div class="wrapper pt__30">
 				{{ partial "breadcrumbs.html" . }}
-			</div>
+			</div> -->
 
 			<div class="wrapper no__padding_t">
+
+				{{- if .Params.tags }}
+				<div class="post__tags tags clearfix top__tags">
+					<ul class="tags__list top__tags__list">
+						{{- range .Params.tags }}
+						<li class="tags__item">
+							<a class="tags__link btn top__tags__link" href="{{ "tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
+								{{- . -}}
+							</a>
+						</li>
+						{{- end }}
+					</ul>
+				</div>
+				{{- end }}
+
 				<div class="p_header">
 					<h1 class="post__title">
 						{{.Title}}

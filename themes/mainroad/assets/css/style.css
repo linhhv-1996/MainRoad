@@ -1699,3 +1699,20 @@ a.disclaimer {
 		padding-top: 25px;
 	}
 }
+
+.top__tags {
+	padding-top: 30px;
+    margin-bottom: 0;
+}
+
+.top__tags__list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.top__tags__link, .top__tags__link:hover {
+	padding: 5px 15px;
+}
+
+

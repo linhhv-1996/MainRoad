@@ -79,7 +79,7 @@ title = "Harry Labs"
 
 [Params.sidebar]
     home = "" # Configure layout for home page
-    list = "right" # Configure layout for list pages
+    list = "" # Configure layout for list pages
     single = "right" # Configure layout for single pages
     # Enable widgets in given order
     widgets = ["search", "recent", "categories", "taglist", "subscribe"]
