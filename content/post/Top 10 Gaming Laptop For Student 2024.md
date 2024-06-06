@@ -1,14 +1,13 @@
 ---
-title: Top 10 Gaming Laptop For Student 2024
+title: 5 Best HVAC Scent Diffuser for Home - A Buying Guide
 description: Describes common Mainroad theme configuration parameters that can be adjusted via config file or via Front
   Matter section.
-# lead: Describes common Mainroad theme configuration parameters that can be adjusted via config file or via Front Matter
-#   section.
+lead: Tired of musty smells in your home? We reviewed the top HVAC scent diffusers so you can choose the best one to make your place smell fresh and clean. Eliminate odors at the source and enjoy a pleasant aroma in every room.
 date: 2024-01-24T14:00:00.000Z
 thumbnail:
   src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   visibility:
-    - list
+    # - list
 authorbox: true
 sidebar: true
 pager: true

@@ -4,7 +4,7 @@ googleAnalytics = "" # Enable Google Analytics by entering your tracking id
 languageCode = "en-us" 
 paginate = "8" # Number of posts per page
 theme = "mainroad"
-title = "HarryLabs"
+title = "Harry Labs"
 
 [Params.banner]
     show = false
@@ -82,7 +82,7 @@ title = "HarryLabs"
     list = "right" # Configure layout for list pages
     single = "right" # Configure layout for single pages
     # Enable widgets in given order
-    widgets = ["search", "subscribe", "recent", "categories", "taglist", "social"]
+    widgets = ["search", "recent", "categories", "taglist", "subscribe"]
 
 [Params.widgets]
     recent_num = 5 # Set the number of articles in the "Recent articles" widget

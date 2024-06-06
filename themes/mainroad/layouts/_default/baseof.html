@@ -59,6 +59,35 @@
 			</div>
 		{{ end }}
 
+		<!-- Post header -->
+
+		{{ if or ( .Type | eq "post") ( .Type | eq "featured" ) }}
+			{{ $postURL := ( print .Site.BaseURL "post/" ) }}
+			{{ $featuredURL := ( print .Site.BaseURL "featured/" ) }}
+			{{ $currentURL := .Page.Permalink }}
+
+			{{ if eq $currentURL $postURL $featuredURL }}
+			{{ else }}
+			<div class="wrapper pt__30">
+				{{ partial "breadcrumbs.html" . }}
+			</div>
+
+			<div class="wrapper no__padding_t">
+				<div class="p_header">
+					<h1 class="post__title">
+						{{.Title}}
+					</h1>
+					<p class="mt-20"> {{ .Params.lead }} </p>
+					{{ with partial "post_meta.html" . -}}
+					<div class="post__meta meta">{{ . }}</div>
+					{{- end }}
+					{{ partial "post_share.html" . }}
+				</div>
+			</div>
+			{{ end }}
+		{{- end -}}
+		<!-- End post header -->
+
 		<div class="wrapper flex">
 			<div class="primary">
 				{{ block "main" . }}
@@ -155,7 +184,7 @@
 		let mobile = window.matchMedia("(min-width: 0px) and (max-width: 768px)");
 		const progressCircle = document.querySelector(".autoplay-progress svg");
 		const progressContent = document.querySelector(".autoplay-progress span");
-		let slidesPerView = mobile.matches ? 1 : 3;
+
 		let swiper = new Swiper(".mySwiper", {
 			slidesPerView: 1,
 			breakpoints: {

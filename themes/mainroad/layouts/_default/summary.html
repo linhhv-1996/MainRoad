@@ -6,9 +6,11 @@
 			{{ .Title }}
 			</a>
 		</h2>
-		{{- with .Params.lead }}
+
+		<!-- {{- with .Params.lead }}
 		<p class="list__lead post__lead">{{ . }}</p>
-		{{- end }}
+		{{- end }} -->
+
 		{{ with partial "post_meta.html" . -}}
 		<div class="list__meta meta">{{ . }}</div>
 		{{- end }}
