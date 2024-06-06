@@ -435,11 +435,11 @@ select {
 
 .logo__tagline {
 	display: inline-block;
-	padding-top: 10px;
+	padding-top: 0px;
 	margin-top: 10px;
 	font-size: 14px;
 	font-size: .875rem;
-	font-weight: 700;
+	font-weight: 400;
 	line-height: 1;
 	color: {{ $highlightColor }};
 	/* border-top: 1px solid #ebebeb; */
