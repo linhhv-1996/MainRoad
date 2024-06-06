@@ -2,9 +2,7 @@
     {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
 
 </ol>
-
-<hr class="breakcum_hr">
-
+<!-- <hr class="breakcum_hr"> -->
 {{ define "breadcrumbnav" }}
 {{ if .p1.Parent }}
 {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }} <i class="fa fa-angle-right"></i>

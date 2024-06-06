@@ -68,7 +68,7 @@ body {
 
 .container--outer {
 	margin: 0px auto;
-	box-shadow: 0 0 10px rgba(173, 173, 173, 0.17);
+	/* box-shadow: 0 0 10px rgba(173, 173, 173, 0.17); */
 }
 
 .wrapper {
@@ -392,6 +392,7 @@ select {
 .logo {
 	padding: 25px;
 	text-align: center;
+	border-bottom: 1px solid rgb(234, 234, 234);
 }
 
 .logo__link {
@@ -502,11 +503,20 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .menu__list {
 	list-style: none;
-	background: #2a2a2a;
+	/* background: #2a2a2a; */
+	background: white;
 }
 
 .menu__item:hover {
-	background: {{ $highlightColor }};
+	/* background: {{ $highlightColor }}; */
+}
+
+.menu__item a:hover {
+	color: black;
+}
+
+.menu__item a:hover span {
+	border-bottom: 3px solid {{ $highlightColor }};
 }
 
 .menu__item:first-child {
@@ -522,7 +532,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 	padding: 10px 15px;
 	padding: .625rem .9375rem;
 	font-weight: 600;
-	color: #fff;
+	color: black;
 	/* text-transform: uppercase; */
 }
 
@@ -556,7 +566,8 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 @media screen and (min-width: 767px) {
 	.menu {
 		/* border-bottom: 3px solid {{ $highlightColor }}; */
-		margin-bottom: 1px;
+		/* margin-bottom: 1px; */
+		padding-bottom: 30px;
 	}
 
 	.menu__btn {
@@ -575,6 +586,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 		border: 0;
 		-webkit-transform: none;
 		transform: none;
+		padding-top: 15px;
 	}
 
 	.menu__item {
@@ -779,7 +791,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .toc {
 	width: 100%;
 	margin-bottom: 20px;
-	font-weight: 600;
+	font-weight: 300;
 	color: #7a8288;
 	background: #fff;
 	border-color: #ebebeb;
@@ -793,6 +805,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 .toc__title {
 	padding: 5px 10px;
 	color: #fff;
+	font-weight: bold;
 	text-transform: uppercase;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -834,7 +847,7 @@ button:not(:-moz-focusring):focus > .menu__btn-title {
 
 .toc__menu a {
 	display: block;
-	padding: 5px 10px;
+	padding: 3px 10px;
 	color: {{ $highlightColor }};
 	border-bottom: 1px solid #ebebeb;
 }
@@ -1651,7 +1664,7 @@ table {
 }
 
 .pt__30 {
-	padding-top: 50px;
+	padding-top: 36px;
 	padding-bottom: 1px;
 }
 
@@ -1666,6 +1679,7 @@ a.disclaimer {
 
 .mt_10 {
 	margin-top: 10px;
+	margin-bottom: 0;
 }
 
 .breakcum_hr {
@@ -1685,4 +1699,3 @@ a.disclaimer {
 		padding-top: 25px;
 	}
 }
-

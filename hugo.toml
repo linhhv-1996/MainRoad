@@ -11,7 +11,7 @@ title = "Harry Labs"
 
 [Params.logo]
     title = "HarryLabs"
-    subtitle = "Latest products and tech trends!" # Logo subtitle
+    subtitle = "" # Logo subtitle
     # image = "https://images.unsplash.com/photo-1715645943531-a57960d41818?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 
 [Menu]
@@ -78,7 +78,7 @@ title = "Harry Labs"
     featuredSections = ["featured"]
 
 [Params.sidebar]
-    home = "right" # Configure layout for home page
+    home = "" # Configure layout for home page
     list = "right" # Configure layout for list pages
     single = "right" # Configure layout for single pages
     # Enable widgets in given order
